@@ -2,7 +2,7 @@
 
 namespace App\Models\Content;
 
-use App\enums\StatusType;
+use App\Enums\StatusType;
 use App\Models\Content\Comment;
 use App\Models\Content\Feedback;
 use App\Models\User;

@@ -2,7 +2,7 @@
 
 namespace App\Models\Content;
 
-use App\enums\FeedbackType;
+use App\Enums\FeedbackType;
 use App\Models\Content\Post;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;

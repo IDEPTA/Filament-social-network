@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\enums\FileKind;
+use App\Enums\FileKind;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
