@@ -7,11 +7,13 @@ use App\Models\Content\Comment;
 use App\Models\Content\Feedback;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
     use HasUuids;
+    use HasFactory;
 
     protected $fillable = [
         "title",
