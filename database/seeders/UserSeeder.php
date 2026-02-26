@@ -2,26 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Content\Comment;
-use App\Models\Content\Post;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-class DatabaseSeeder extends Seeder
+class UserSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      */
     public function run(): void
     {
-        User::factory(50)->create();
-        Post::factory(500)->create();
-        Comment::factory(500)->create();
-
         User::firstOrCreate(
             ['email' => 'admin@soc.local'],
             [
@@ -29,5 +20,6 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('password'),
             ]
         );
+        User::factory(50)->create();
     }
 }
