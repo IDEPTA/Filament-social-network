@@ -5,10 +5,12 @@ namespace App\Models\Content;
 use App\Enums\StatusType;
 use App\Models\Content\Comment;
 use App\Models\Content\Feedback;
+use App\Models\File;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Post extends Model
 {
@@ -31,7 +33,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function comment()
+    public function comments()
     {
         return $this->hasMany(Comment::class);
     }
@@ -39,5 +41,13 @@ class Post extends Model
     public function feedback()
     {
         return $this->hasMany(Feedback::class);
+    }
+
+    /**
+     * Файлы, прикреплённые к объекту (полиморфная связь).
+     */
+    public function files(): MorphMany
+    {
+        return $this->morphMany(File::class, 'model');
     }
 }
