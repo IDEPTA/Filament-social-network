@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Posts;
 
+use App\Filament\RelationManager\FilesRelationManager;
 use App\Filament\Resources\Posts\Pages\CreatePost;
 use App\Filament\Resources\Posts\Pages\EditPost;
 use App\Filament\Resources\Posts\Pages\ListPosts;
@@ -10,6 +11,7 @@ use App\Filament\Resources\Posts\RelationManagers\CommentsRelationManager;
 use App\Filament\Resources\Posts\Schemas\PostForm;
 use App\Filament\Resources\Posts\Schemas\PostInfolist;
 use App\Filament\Resources\Posts\Tables\PostsTable;
+use App\Filament\Resources\Posts\Widgets\NewPostsChart;
 use App\Models\Content\Post;
 use BackedEnum;
 use Dom\Comment;
@@ -31,6 +33,13 @@ class PostResource extends Resource
     protected static bool $hasTitleCaseModelLabel = false;
     protected static ?int $navigationSort = 1;
 
+    public static function getGloballySearchableAttributes(): array
+    {
+        return [
+            'text'
+        ];
+    }
+
     public static function form(Schema $schema): Schema
     {
         return PostForm::configure($schema);
@@ -49,6 +58,7 @@ class PostResource extends Resource
     public static function getRelations(): array
     {
         return [
+            FilesRelationManager::class,
             CommentsRelationManager::class,
         ];
     }

@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Content\Comment;
+use App\Models\Content\Post;
 use Illuminate\Database\Seeder;
 
 class ContentSeeder extends Seeder
@@ -12,6 +13,7 @@ class ContentSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Post::factory(500)->create();
+        Comment::factory(2500)->create();
     }
 }
