@@ -26,7 +26,7 @@ class PostFactory extends Factory
             "text" => fake()->text(50),
             "user_id" => fake()->randomElement($users),
             "status" => fake()->randomElement(array_map(fn($case) => $case->value, StatusType::cases())),
-            "created_at" => Carbon::today()->subDay(rand(16, 30)),
+            "created_at" => Carbon::today()->subDay(rand(1, 30)),
         ];
     }
 }

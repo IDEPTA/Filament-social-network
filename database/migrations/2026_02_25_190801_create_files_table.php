@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('disk');
+            $table->string('disk')->nullable();
             $table->string('path');
             $table->string('original_name');
             $table->string('mime')->nullable();

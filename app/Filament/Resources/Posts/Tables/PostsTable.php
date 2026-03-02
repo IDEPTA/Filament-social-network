@@ -32,7 +32,7 @@ class PostsTable
                     ->toggleable()
                     ->label('Автор'),
                 TextColumn::make('created_at')
-                    ->label('Дата регистрации')
+                    ->label('Дата публикации')
                     ->toggleable()
                     ->date('M j, Y'),
                 TextColumn::make('updated_at')

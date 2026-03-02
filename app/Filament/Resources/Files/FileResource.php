@@ -26,6 +26,14 @@ class FileResource extends Resource
     protected static bool $hasTitleCaseModelLabel = false;
     protected static ?int $navigationSort = 1;
 
+    public static function getGloballySearchableAttributes(): array
+    {
+        return [
+            'original_name',
+            'path'
+        ];
+    }
+
     public static function form(Schema $schema): Schema
     {
         return FileForm::configure($schema);
