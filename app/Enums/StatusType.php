@@ -10,6 +10,11 @@ enum StatusType: string
     case WITHDRAWAL_PENDING = 'withdrawal_pending';
     case ARCHIVED = 'archived';
 
+    /**
+     * Возвращает лейблы
+     *
+     * @return string
+     */
     public function label(): string
     {
         return match ($this) {
@@ -21,6 +26,11 @@ enum StatusType: string
         };
     }
 
+    /**
+     * Возвращает цвет
+     *
+     * @return string
+     */
     public function color(): string
     {
         return match ($this) {

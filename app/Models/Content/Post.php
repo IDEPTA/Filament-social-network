@@ -24,6 +24,11 @@ class Post extends Model
         "user_id"
     ];
 
+    protected $searchable = [
+        'text',
+        'status'
+    ];
+
     protected $casts = [
         'status' => StatusType::class,
     ];

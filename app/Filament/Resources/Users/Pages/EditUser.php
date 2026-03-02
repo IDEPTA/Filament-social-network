@@ -3,6 +3,8 @@
 namespace App\Filament\Resources\Users\Pages;
 
 use App\Filament\Resources\Users\UserResource;
+use App\Filament\Widgets\CommentByUserChart;
+use App\Filament\Widgets\PostByUserChart;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
@@ -16,6 +18,14 @@ class EditUser extends EditRecord
         return [
             ViewAction::make(),
             DeleteAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            CommentByUserChart::class,
+            PostByUserChart::class
         ];
     }
 }

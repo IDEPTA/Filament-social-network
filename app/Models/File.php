@@ -24,6 +24,10 @@ class File extends Model
         'created_by',
     ];
 
+    protected $searchable = [
+        'original_name',
+    ];
+
     protected $casts = [
         'kind' => FileKind::class,
     ];

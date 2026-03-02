@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Files\Pages;
 
 use App\Filament\Resources\Files\FileResource;
-use Filament\Actions\CreateAction;
+use App\Filament\Widgets\UploadedFilesChart;
 use Filament\Resources\Pages\ListRecords;
 
 class ListFiles extends ListRecords
@@ -12,8 +12,13 @@ class ListFiles extends ListRecords
 
     protected function getHeaderActions(): array
     {
+        return [];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
         return [
-            CreateAction::make(),
+            UploadedFilesChart::class
         ];
     }
 }

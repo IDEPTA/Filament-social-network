@@ -19,6 +19,11 @@ class Comment extends Model
         "post_id",
     ];
 
+    protected $searchable = [
+        'text',
+        'status'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -28,6 +28,13 @@ class CommentResource extends Resource
     protected static bool $hasTitleCaseModelLabel = false;
     protected static ?int $navigationSort = 2;
 
+    public static function getGloballySearchableAttributes(): array
+    {
+        return [
+            'text'
+        ];
+    }
+
     public static function form(Schema $schema): Schema
     {
         return CommentForm::configure($schema);

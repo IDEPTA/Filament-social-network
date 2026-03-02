@@ -9,12 +9,16 @@ enum FileKind: string
     case Preview = 'preview';
     case Document = 'document';
 
-
+    /**
+     * Возвращает лейблы
+     *
+     * @return string
+     */
     public function label(): string
     {
         return match ($this) {
-            self::Image => 'Оригинал',
-            self::Avatar => 'Мастер',
+            self::Image => 'Изображение',
+            self::Avatar => 'Аватар',
             self::Preview => 'Превью',
             self::Document => 'Документ',
         };
